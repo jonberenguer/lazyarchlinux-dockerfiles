@@ -1,0 +1,12 @@
+FROM archlinux
+
+LABEL maintainer="jberenguer.dev@gmail.com"
+
+RUN pacman -Sy --noconfirm <package>
+
+RUN useradd <>
+
+WORKDIR /home/<>
+USER <>
+
+ENTRYPOINT ["/path/command","arg"]

@@ -6,7 +6,7 @@ RUN echo "Server = http://${repohost}/archlinux/\$repo/os/\$arch" > /etc/pacman.
 
 RUN pacman -Sy --noconfirm <package>
 
-RUN useradd <>
+RUN useradd <> && mkhomedir_helper <>
 
 WORKDIR /home/<>
 USER <>

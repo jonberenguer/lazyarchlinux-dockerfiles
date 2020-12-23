@@ -4,11 +4,11 @@ LABEL maintainer="jberenguer.dev@gmail.com"
 ARG repohost
 RUN echo "Server = http://${repohost}/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
 
-RUN pacman -Sy --noconfirm <package>
+RUN pacman -Sy --noconfirm p7zip
 
-RUN useradd <>
+RUN useradd extractor
 
-WORKDIR /home/<>
-USER <>
+WORKDIR /home/extractor
+USER extractor
 
-ENTRYPOINT ["/path/command","arg"]
+ENTRYPOINT ["/usr/bin/7z"]

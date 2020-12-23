@@ -6,4 +6,3 @@ mkdir ${ImageName}
 
 cp ./Dockerfile-template ${ImageName}/Dockerfile
 
-

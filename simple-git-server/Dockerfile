@@ -10,4 +10,4 @@ RUN pacman -Sy --noconfirm openssh && \
 
 RUN useradd git && mkhomedir_helper git ; pacman -Sy --noconfirm git
 
-ENTRYPOINT ["/usr/bin/sshd","-D"]
+ENTRYPOINT ["/usr/bin/sshd","-D","-e"]

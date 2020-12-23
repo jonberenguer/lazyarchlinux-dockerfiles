@@ -14,5 +14,5 @@ To create a new image use the following steps:
  - ip/hostname is your local repo server
 
 ## Future
-[] gui containers
-[] scripts to rebuild images when there are updates in archlinux
+- [ ] gui containers
+- [ ] scripts to rebuild images when there are updates in archlinux

@@ -13,7 +13,6 @@ To create a new image use the following steps:
 3) build image: `docker build -t yourdomain/imagename --build-arg repohost="ip/hostname"`
  - ip/hostname is your local repo server
 
-
 ## Future
 [] gui containers
 [] scripts to rebuild images when there are updates in archlinux

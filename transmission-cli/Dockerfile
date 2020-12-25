@@ -2,14 +2,17 @@ FROM archlinux
 LABEL maintainer="jberenguer.dev@gmail.com"
 
 ARG repohost=mirrors.mit.edu
+ARG containeruser=cuser
+
 RUN echo "Server = http://${repohost}/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
 
-RUN pacman -Sy --noconfirm transmission-cli
+RUN useradd ${containeruser} && mkhomedir_helper ${containeruser}
 
-RUN useradd torrentuser && mkhomedir_helper torrentuser
+RUN pacman -Sy --noconfirm transmission-cli ; \
+    echo -e 'y\ny' | pacman -Scc
 
-WORKDIR /home/torrentuser
-USER torrentuser
+WORKDIR /home/${containeruser}
+USER ${containeruser}
 
 CMD /bin/bash
 

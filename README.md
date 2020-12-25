@@ -17,4 +17,4 @@ To create a new image use the following steps:
 ## Future
 - [ ] gui containers
 - [ ] scripts to rebuild images when there are updates in archlinux
-- [ ] auto builds in docker hub
+- [x] auto builds in docker hub

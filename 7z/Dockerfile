@@ -8,11 +8,10 @@ RUN echo "Server = http://${repohost}/archlinux/\$repo/os/\$arch" > /etc/pacman.
 
 RUN useradd ${containeruser} && mkhomedir_helper ${containeruser}
 
-
-RUN pacman -Sy --noconfirm <package> ; \
+RUN pacman -Sy --noconfirm p7zip ; \
     echo -e 'y\ny' | pacman -Scc
 
 WORKDIR /home/${containeruser}
 USER ${containeruser}
 
-ENTRYPOINT ["/path/command","arg"]
+ENTRYPOINT ["/usr/bin/7z"]

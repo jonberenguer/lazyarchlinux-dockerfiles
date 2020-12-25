@@ -1,14 +1,16 @@
 # usage
-After image is created, its recommended to run this interactively.
-`docker run -it -v /host/path/download:/home/torrentuser/download imagename`
+After image is created/downloaded, its recommended to run this interactively.
+`docker run -it -v /host/path/download:/home/cuser/download lazyarchlinux/transmission-cli`
 
 download path is used for host share
 
-## while in the running container
+## While in the running container
 ```
-transmission-daemon --download-dir "/home/torrentuser/download"
+# setup the download dir and verify
+transmission-daemon --download-dir "/home/cuser/download"
 transmission-daemon --dump-settings # verify settings
 
+# run the daemon
 transmission-daemon
 
 # to download torrent
@@ -19,5 +21,4 @@ transmission-remote -l
 
 # remove torrent
 transmission-remote -t all|ID -r
-
 ```
